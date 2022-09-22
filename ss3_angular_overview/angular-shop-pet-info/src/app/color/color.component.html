@@ -1,0 +1,4 @@
+<label for="colorPick"></label>
+<input type="color" (input)="changeColor($event.target)" id="colorPick">
+
+<p [style.background-color]="color" style="height: 700px">change color</p>

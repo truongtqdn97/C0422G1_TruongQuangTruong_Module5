@@ -852,4 +852,18 @@ section {
     font-size: 3rem;
   }
 }
+
+a{
+  text-decoration: none;
+}
+
+.table{
+  font-size: 1.8rem;
+}
+
+.table .btn{
+  height: 30px;
+  width: 60px;
+  padding: 0;
+}
 /*# sourceMappingURL=style.css.map */

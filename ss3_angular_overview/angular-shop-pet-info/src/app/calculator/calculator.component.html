@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-2">
+      <label for="num1">Number 1:</label>
+      <input type="text" id="num1" [(ngModel)]="num1"
+             class="form-control">
+
+      <label for="operator">Operator:</label>
+      <input type="text" id="operator" [(ngModel)]="operator"
+             class="form-control">
+
+      <label for="num2">Number 2:</label>
+      <input type="text" id="num2" [(ngModel)]="num2"
+             class="form-control">
+
+      <button class="btn btn-outline-success" (click)="calculate()">=</button>
+      <br>
+
+      <label for="result">Result:</label>
+      <p id="result"
+         class="form-control">{{result}}</p>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="shortcut icon"
+          href="https://furamavietnam.com/wp-content/uploads/2018/07/favicon.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        body{
+            background-color: #F2E6D8;
+        }
+    </style>
+
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-hiking"></i> travel. </a>
+    <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="#home">home</a>
+        <a href="#">facility</a>
+        <a href="#">customer</a>
+        <a href="#">employee</a>
+        <a href="#reviews">reviews</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <div id="search-btn" class="fas fa-search"></div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row"  style="margin-top: 100px">
+        <div class="col-md-3">
+            <a href="/facility/create" class="btn btn-success">Add new Service</a>
+        </div>
+        <div class="col-md-3">
+            <select name="facilityTypeSelect"
+                    id="facilityTypeSelect"
+                    class="form-select bg-transparent text-light">
+                <option class="text-dark">Select Facility Type</option>
+                <option class="text-dark">All Facility Type</option>
+            </select>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <nav>
+                <div class="container-fluid">
+                    <form action="/facility/list" method="post" class="d-flex">
+                        <input class="form-control me-2" type="search"
+                               placeholder="Search"
+                               aria-label="Search"
+                               name="searchName">
+                        <button class="btn btn-outline-success btn-light" type="submit"><strong>Search</strong></button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Max people</th>
+                    <th scope="col">Rental Type</th>
+                    <th scope="col">Facility Type</th>
+                    <th scope="col" style="text-align: right">Action</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-light">
+                    <th scope="row">1</th>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <a type="button" data-bs-toggle="modal"
+                           data-bs-target="#detailModal"
+                           class="text-primary">
+                        </a>
+                    </td>
+                    <td>area</td>
+                    <td>cost</td>
+                    <td>maxPeople</td>
+                    <td>rentTypeName</td>
+                    <td>facilityTypeName</td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                                class="btn">
+                            <a>
+                                <img src="../../img/edit-2.png"
+                                     style="height: 20px;width: auto">
+                            </a>
+                        </button>
+                    </td>
+                    <td class="btn-delete">
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                                class="btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteButton">
+                            <img src="../../img/delete.png"
+                                 style="height: 20px;width: auto">
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--modal delete-->
+<div class="modal fade" id="deleteButton" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="/facility/remove" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Deleting</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Delete <span class="fw-bold text-danger" id="removeName"></span>?
+                    <input type="hidden" id="removeId" name="removeId">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">&#10006;</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--call modal notice-->
+<!--<input type="hidden" id="noticeMsgModal" th:value="${msg}">-->
+<!-- Modal notice -->
+<div class="modal fade" id="noticeMsg" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-3 shadow">
+            <div class="modal-header">
+                <h5 class="modal-title">Furama 's notice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+<!--                <span th:text="${msg}"></span>-->
+                <img src="https://media0.giphy.com/media/AWIm1O6FjmCtsI2Pru/giphy.gif?cid=790b7611e14412e5147aee187464a8df9dfeea3085950a9a&rid=giphy.gif&ct=s"
+                     style="width: 35px; height: auto"
+                     alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">&#10004;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- detail Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel">Facility Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span id="detailFacility"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#">my account</a>
+            <a href="#">my order</a>
+            <a href="#">my wishlist</a>
+            <a href="#">ask questions</a>
+            <a href="#">terms of use</a>
+            <a href="#">privacy policy</a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> reservation@furamavietnam.com </a>
+            <a href="#"> <i class="fas fa-map"></i> Danang, Vietnam - 12345 </a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/furamaresort/"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="https://twitter.com/"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="https://www.youtube.com/user/furamaresortvietnam/featured"> <i class="fab fa-youtube"></i> youtube </a>
+            <a href="https://www.linkedin.com/"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="https://furamavietnam.com/"> <i class="fas fa-globe"></i> website </a>
+        </div>
+    </div>
+    <div class="credit"> created by <span><a href="https://fb.com/truongtq.dn97">Quang Truong</a></span> | all
+        rights reserved!
+    </div>
+</section>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
