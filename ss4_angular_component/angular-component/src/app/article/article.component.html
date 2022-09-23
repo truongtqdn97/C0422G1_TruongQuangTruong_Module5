@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+</div>
+<div class="row">
+  <div class="col-12 d-flex justify-content-center">
+    <h2 class="text-primary">&#x262D; Facebook &#x262D;</h2>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div>
+    <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <h4>Hi Truong, How is your today? &#9728; &#9729; &#9730; &#9731;</h4>
+      <table>
+        <tr>
+          <td>Title:</td>
+          <td><input class="form-control" [(ngModel)]="article.title" cols="70"></td>
+        </tr>
+        <tr>
+          <td>Url:</td>
+          <td>
+            <textarea class="form-control" [(ngModel)]="article.url" cols="70"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button style="float: right" (click)="addNewArticle()">Add</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-2"></div>
+</div>
+<hr>
+<div class="container">
+  <div *ngFor="let art of articles">
+    <a href="{{art.url}}" target="_blank">{{art.title}}</a>:
+    <app-like></app-like>
+  </div>
+</div>
