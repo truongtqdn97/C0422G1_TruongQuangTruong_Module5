@@ -1,0 +1,612 @@
+<div class="container">
+  <div class="row"  style="margin-top: 100px">
+    <div class="col-md-3">
+      <a href="#" class="btn btn-success">Add new Service</a>
+    </div>
+    <div class="col-md-3">
+      <select name="facilityTypeSelect"
+              id="facilityTypeSelect"
+              class="form-select bg-transparent text-light">
+        <option class="text-dark">Select Facility Type</option>
+        <option class="text-dark">All Facility Type</option>
+      </select>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <nav>
+        <div class="container-fluid">
+          <form action="#" method="post" class="d-flex">
+            <input class="form-control me-2" type="search"
+                   placeholder="Search"
+                   aria-label="Search"
+                   name="searchName">
+            <button class="btn btn-outline-success btn-light" type="submit"><strong>Search</strong></button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+        <tr class="table-dark">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Area</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Max people</th>
+          <th scope="col">Rental Type</th>
+          <th scope="col">Facility Type</th>
+          <th scope="col" style="text-align: right">Action</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">1</th>
+          <td>
+            <!-- Button trigger modal -->
+            <a type="button" data-bs-toggle="modal"
+               data-bs-target="#detailModal"
+               class="text-primary">
+            </a>
+          </td>
+          <td>area</td>
+          <td>cost</td>
+          <td>maxPeople</td>
+          <td>rentTypeName</td>
+          <td>facilityTypeName</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn">
+              <a>
+                <img src="../../img/edit-2.png"
+                     style="height: 20px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteButton">
+              <img src="../../img/delete.png"
+                   style="height: 20px;width: auto">
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

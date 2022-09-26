@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row mt-5"  style="margin-top: 100px">
+    <div class="col-md-3">
+      <a href="#" class="btn btn-success">Back to Facility List</a>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-md-center" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12 bg-light info shadow rounded-3 mb-5">
+      <form method="post" action="">
+        <fieldset>
+          <legend class="my-5" style="text-align: center">Service Information</legend>
+          <table class="m-5">
+            <tr>
+              <td>Name</td>
+              <td>
+                <input type="text" name="name" id="name"
+                       class="form-control">
+                <div class="text-danger"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Area</td>
+              <td>
+                <input type="text" name="area" id="area"
+                       class="form-control">
+                <div class="text-danger"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>
+                <input type="number" name="cost" id="cost"
+                       class="form-control">
+                <div class="text-danger"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Max people</td>
+              <td>
+                <input type="number" name="maxPeople"
+                       class="form-control">
+                <div class="text-danger"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Rental type</td>
+              <td>
+                <select name="rentType" id="rentType"
+                        class="form-select">
+                  <option></option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Service 's Type</td>
+              <td>
+                <select name="facilityType" id="serviceType"
+                        onchange="selectServiceType(this)"
+                        class="form-select">
+                  <option value="">-Select Service 's Type-</option>
+                  <option></option>
+                </select>
+              </td>
+            </tr>
+            <tr id="standardRoom" style="display: none">
+              <td>Standard Room</td>
+              <td><input type="text" name="standardRoom"
+                         class="form-control"></td>
+            </tr>
+            <tr id="descriptionOtherConvenience" style="display: none">
+              <td>Description Other Convenience</td>
+              <td><input type="text" name="descriptionOtherConvenience"
+                         class="form-control"></td>
+            </tr>
+            <tr id="poolArea" style="display: none">
+              <td>Pool 's Area</td>
+              <td>
+                <input type="text" name="poolArea"
+                       class="form-control">
+              </td>
+            </tr>
+            <tr id="numberOfFloors" style="display: none">
+              <td>Number of Floors</td>
+              <td>
+                <input type="text" name="numberOfFloors"
+                       value=""
+                       class="form-control">
+                <div class="text-danger"></div>
+              </td>
+            </tr>
+            <tr id="facilityFree" style="display: none">
+              <td>Facility Free</td>
+              <td><input type="text" name="facilityFree"
+                         class="form-control"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Create new Service" class="btn btn-success"></td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
