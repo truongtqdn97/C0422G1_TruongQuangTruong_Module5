@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="contact-form">
+        <div class="form-field">
+
+          <input class="input-text" type="text" formControlName="email" id="email" name="email">
+          <label class="label" for="email">Email</label>
+          <p *ngIf="loginForm.controls.email.hasError('required')
+        && loginForm.controls.email.touched">
+            Not blank, Sir!
+          </p>
+          <p *ngIf="loginForm.controls.email.hasError('email')
+        && loginForm.controls.email.touched">
+            Wrong format email, Sir!
+          </p>
+        </div>
+
+        <input class="input-text" type="password" formControlName="password" id="password" name="password"><br>
+        <label class="label" for="password">Password</label><br>
+        <p *ngIf="loginForm.controls.password.hasError('required')
+        && loginForm.controls.password.touched">
+          Not blank, Sir!
+        </p>
+        <p *ngIf="loginForm.controls.password.hasError('minlength')
+        && loginForm.controls.password.touched">
+          At least 6 characters, Sir!
+        </p>
+        <button class="submit-btn" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

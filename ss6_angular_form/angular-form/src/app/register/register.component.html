@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form [formGroup]="registerForm" (ngSubmit)="registerAccount()">
+        <label for="email">Email</label><br>
+        <input type="text" formControlName="email" id="email" name="email"><br>
+        <p *ngIf="registerForm.controls.email.hasError('required')
+        && registerForm.controls.email.touched">
+          Not blank, Sir!
+        </p>
+        <p *ngIf="registerForm.controls.email.hasError('email')
+        && registerForm.controls.email.touched">
+          Wrong format email, Sir!
+        </p>
+        <fieldset formGroupName="passwordGroup">
+          <label for="password">Password</label><br>
+          <input type="password" formControlName="password" id="password" name="password"><br>
+          <p *ngIf="registerForm.controls.passwordGroup.get('password').hasError('required')
+        && registerForm.controls.passwordGroup.get('password').touched">
+            Not blank, Sir!
+          </p>
+          <p *ngIf="registerForm.controls.passwordGroup.get('password').hasError('minlength')
+        && registerForm.controls.passwordGroup.get('password').touched">
+            At least 6 characters, Sir!
+          </p>
+          <label for="confirmPassword">Confirm Password</label><br>
+          <input type="password" formControlName="confirmPassword" id="confirmPassword" name="confirmPassword"><br>
+          <p *ngIf="registerForm.controls.passwordGroup.hasError('invalidPassword')
+              && registerForm.controls.passwordGroup.touched">
+            Password not match!hmmm
+          </p>
+        </fieldset>
+
+        <label for="country">Country</label><br>
+        <select formGroupName="country" id="country" name="country">
+          <option value="Vietnam">Vietnam</option>
+          <option value="Laos">Laos</option>
+          <option value="Malaysia">Malaysia</option>
+        </select>
+        <br>
+
+        <label for="age">Age</label><br>
+        <input type="number" formControlName="age" id="age" name="age"><br>
+        <p *ngIf="registerForm.controls.age.hasError('required')
+        && registerForm.controls.age.touched">
+          Not blank, Sir!
+        </p>
+        <p *ngIf="registerForm.controls.age.hasError('min')
+        && registerForm.controls.age.touched">
+          oh my Godness, u r under 18 years old
+        </p>
+        <label>Gender</label><br>
+        <input type="radio" formControlName="gender" name="gender" value="male"> Male
+        <input type="radio" formControlName="gender" name="gender" value="female"> Female
+        <br>
+
+        <label for="phone">Phone</label><br>
+        <input type="text" formControlName="phone" id="phone" name="phone"><br>
+        <p *ngIf="registerForm.controls.phone.hasError('pattern')
+        && registerForm.controls.phone.touched">
+          u r in Vietnam, pls enter phone number of Vietnam
+        </p>
+        <button type="submit">Create new account</button>
+      </form>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
