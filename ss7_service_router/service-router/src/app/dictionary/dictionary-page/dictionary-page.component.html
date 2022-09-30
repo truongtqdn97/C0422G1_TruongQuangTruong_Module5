@@ -1,0 +1,23 @@
+<h3>Từ điển tiếng Anh chuyên ngành</h3>
+<table border="1">
+  <tr>
+    <th>English</th>
+    <th>Tiếng Việt</th>
+    <th>Chi tiết</th>
+  </tr>
+  <tr *ngFor="let dictionary of dictionaries">
+    <td>{{dictionary.word}}</td>
+    <td>{{dictionary.mean}}</td>
+    <td>
+      <button [routerLink]="['/dictionary', dictionary.word]">Detail</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <input type="text" #searchInput name="search" >
+    </td>
+    <td>
+      <button (click)="search(searchInput.value)">Tìm</button>
+    </td>
+  </tr>
+</table>
