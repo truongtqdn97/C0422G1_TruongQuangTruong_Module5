@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New",
+      "category": {
+        "id": 1,
+        "name": "Giàu"
+      }
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": 2,
+        "name": "Trung"
+      }
+    },
+    {
+      "id": 6,
+      "name": "laptop",
+      "price": 9999,
+      "category": {
+        "id": 1,
+        "name": "Giàu"
+      },
+      "description": "99%"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Giàu"
+    },
+    {
+      "id": 2,
+      "name": "Trung"
+    },
+    {
+      "id": 3,
+      "name": "Nghèo"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <label for="inputTodo">Enter To-do List</label>
+  <input id="inputTodo" type="text" class="form-control" [formControl]="content" (change)="change()">
+  <ul>
+    <li [class.complete]="todo.complete"
+      *ngFor="let todo of todos; index as i">
+      id: {{todo.id}} <br>
+      content: {{todo.content}} <br>
+      status: <span *ngIf="todo.complete">Done</span>
+      <span *ngIf="!todo.complete">Doing</span>
+      <br>
+      <button (click)="toggleTodo(todo.id)" class="btn btn-outline-danger">Delete</button>
+    </li>
+  </ul>
+</div>

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
-import {element} from "protractor";
 
 @Injectable({
   providedIn: 'root'
