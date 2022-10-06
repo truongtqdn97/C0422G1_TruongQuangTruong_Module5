@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { BusListComponent } from './bus/bus-list/bus-list.component';
 import { BusUpdateComponent } from './bus/bus-update/bus-update.component';
+import { BusCreateComponent } from './bus/bus-create/bus-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BusUpdateComponent } from './bus/bus-update/bus-update.component';
     HomeComponent,
     FooterComponent,
     BusListComponent,
-    BusUpdateComponent
+    BusUpdateComponent,
+    BusCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Bus} from "../../model/bus";
-import {BusService} from "../../service/bus.service";
 import Swal from 'sweetalert2';
+import {Trip} from "../../model/trip";
+import {TripService} from "../../service/trip.service";
 
 @Component({
   selector: 'app-bus-list',
@@ -9,28 +9,27 @@ import Swal from 'sweetalert2';
   styleUrls: ['./bus-list.component.css']
 })
 export class BusListComponent implements OnInit {
-  busList: Bus[] = [];
-  busObj: Bus = {};
+  trips: Trip[] = [];
 
-  constructor(private busService: BusService) {
+  constructor(private tripService: TripService) {
 
   }
 
   ngOnInit(): void {
-    this.busService.findAll().subscribe(next => this.busList = next);
+    this.tripService.findAll().subscribe(next => this.trips = next.content);
   }
 
-  deleteModal(bus: Bus) {
+  deleteModal(trip: Trip) {
     Swal.fire({
       title: 'Xác nhận xoá',
-      text: 'Bạn sẽ không khôi phục được chuyến xe của "' + bus.name + '"!',
+      text: 'Bạn sẽ không khôi phục được chuyến xe "' + trip.agency.busNumber + '"!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Xoá',
       cancelButtonText: 'Giữ lại'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.busService.delete(bus.id).subscribe(next => this.ngOnInit());
+        this.tripService.delete(trip.id).subscribe(next => this.ngOnInit());
         Swal.fire(
           'Thông báo!',
           'Thông tin chuyến xe đã bị xoá.',

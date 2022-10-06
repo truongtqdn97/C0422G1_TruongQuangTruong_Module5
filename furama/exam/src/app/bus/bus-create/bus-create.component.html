@@ -3,13 +3,13 @@
     <div class="col-md-12 bg-light info">
       <form [formGroup]="busForm" (ngSubmit)="submit()">
         <fieldset>
-          <legend style="text-align: center">Chỉnh sửa thông tin xe khách</legend>
+          <legend style="text-align: center">Thông tin xe khách</legend>
           <table>
             <tr>
               <td>Số xe</td>
               <td>
                 <p formControlName="busNumber" readonly
-                       type="text" name="busNumber" id="busNumber"
+                   type="text" name="busNumber" id="busNumber"
                    class="form-control">{{tripObj.agency.busNumber}}</p>
               </td>
             </tr>
@@ -19,7 +19,7 @@
                 <select formControlName="agency"
                         type="text" name="agency"
                         id="agency" class="form-control">
-                  <option *ngFor="let agencyObj of agencies" [ngValue]="agencyObj.id">{{agencyObj.name}}</option>
+                  <option *ngFor="let agencyObj of agencies" [ngValue]="agencyObj">{{agencyObj.name}}</option>
                 </select>
                 <p class="text-danger" *ngIf="busForm.controls.agency.get('name').hasError('required')
                       && busForm.controls.agency.get('name').touched">
@@ -31,8 +31,9 @@
               <td>Điểm đi</td>
               <td>
                 <select name="" id="" formControlName="departure">
-                  <option [selected]="busForm.value.departure" value="{{tripObj.departure}}">{{tripObj.departure}}</option>
                   <option value="Ho Chi Minh">HCM</option>
+                  <option value="Hue">Hue</option>
+                  <option value="Ha Noi">Ha Noi</option>
                 </select>
                 <p class="text-danger" *ngIf="busForm.controls.go.hasError('required')
                       && busForm.controls.go.touched">
@@ -79,7 +80,7 @@
             <tr>
               <td><a routerLink="bus" class="btn btn-outline-secondary">Quay lại</a></td>
               <td>
-                <button type="submit" class="btn btn-outline-success">Cập nhật</button>
+                <button type="submit" class="btn btn-outline-success">Tạo mới</button>
               </td>
             </tr>
           </table>

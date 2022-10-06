@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import Swal from "sweetalert2";
 import {BusType} from "../../model/bus-type";
-import {Bus} from "../../model/bus";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {BusService} from "../../service/bus.service";
 import {BusTypeService} from "../../service/bus-type.service";
+import {TripService} from "../../service/trip.service";
+import {AgencyService} from "../../service/agency.service";
+import {Trip} from "../../model/trip";
+import {Agency} from "../../model/agency";
 
 @Component({
   selector: 'app-bus-update',
@@ -14,24 +16,31 @@ import {BusTypeService} from "../../service/bus-type.service";
 })
 export class BusUpdateComponent implements OnInit {
   busTypes: BusType[] = [];
-  busObj: Bus = {};
+  agencies: Agency[] = [];
+  tripObj: Trip = {};
   busForm: FormGroup;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private busService: BusService,
+              private tripService: TripService,
+              private agencyService: AgencyService,
               private busTypeService: BusTypeService,
               private router: Router) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = paramMap.get('id');
-      this.busService.findById(parseInt(id)).subscribe(next => {
-        this.busObj = next;
+      this.tripService.findById(parseInt(id)).subscribe(next => {
+        this.tripObj = next;
         this.buildForm();
       })
     })
   }
 
   ngOnInit(): void {
-    this.getBusType();
+    // this.getBusType(); //no need
+    this.getAgency();
+  }
+
+  getAgency() {
+    this.agencyService.findAll().subscribe(next => this.agencies = next);
   }
 
   getBusType() {
@@ -40,16 +49,12 @@ export class BusUpdateComponent implements OnInit {
 
   buildForm() {
     this.busForm = new FormGroup({
-      id: new FormControl(this.busObj.id),
-      busNumber: new FormControl(this.busObj.busNumber),
-      name: new FormControl(this.busObj.name, [Validators.required]),
-      go: new FormControl(this.busObj.go, [Validators.required]),
-      arrival: new FormControl(this.busObj.arrival, [Validators.required]),
-      phone: new FormControl(this.busObj.phone, [Validators.required, Validators.pattern("^(090|093|097)\\d{7}$")]),
-      email: new FormControl(this.busObj.email, [Validators.required, Validators.email]),
-      hourGo: new FormControl(this.busObj.hourGo, [Validators.required]),
-      hourArrival: new FormControl(this.busObj.hourArrival, [Validators.required]),
-      busType: new FormControl(this.busObj.busType.id)
+      id: new FormControl(this.tripObj.id),
+      departure: new FormControl(this.tripObj.departure, [Validators.required]),
+      arrival: new FormControl(this.tripObj.arrival, [Validators.required]),
+      departureTime: new FormControl(this.tripObj.departureTime, [Validators.required]),
+      arrivalTime: new FormControl(this.tripObj.arrivalTime, [Validators.required]),
+      agency: new FormControl(this.tripObj.agency.id)
     })
   }
 
@@ -57,12 +62,12 @@ export class BusUpdateComponent implements OnInit {
     const bus = this.busForm.value;
     console.warn(bus);
     if (!this.busForm.invalid) {
-      this.busTypeService.findById(bus.busType).subscribe(
-        next => bus.busType = next,
+      this.agencyService.findById(bus.agency).subscribe(
+        next => bus.agency = next,
         error => {
         },
         () => {
-          this.busService.update(bus).subscribe(next => {
+          this.tripService.update(bus).subscribe(next => {
             this.router.navigateByUrl("bus");
             Swal.fire('Thông báo', 'Cập nhật thành công', 'success');
           });

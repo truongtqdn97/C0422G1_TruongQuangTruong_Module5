@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row" style="margin-top: 100px">
     <div class="col-md-3">
-      <a href="#" class="btn btn-outline-success btn-light"><strong>Add new customer</strong></a>
+      <a routerLink="/bus/create" class="btn btn-outline-success btn-light"><strong>Add new customer</strong></a>
     </div>
     <div class="col-md-3"></div>
     <div class="col-md-6 d-flex justify-content-end">
@@ -38,28 +38,28 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let bus of busList; index as i">
+        <tr *ngFor="let trip of trips; index as i">
           <th scope="row">{{i + 1}}</th>
-          <td>{{bus.busNumber}}</td>
-          <td>{{bus.busType.name}}</td>
-          <td>{{bus.name}}</td>
-          <td>{{bus.go}}</td>
-          <td>{{bus.arrival}}</td>
-          <td>{{bus.phone}}</td>
-          <td>{{bus.email}}</td>
-          <td>{{bus.hourGo}}</td>
-          <td>{{bus.hourArrival}}</td>
+          <td>{{trip.agency.busNumber}}</td>
+          <td>{{trip.agency.busType.name}}</td>
+          <td>{{trip.agency.name}}</td>
+          <td>{{trip.departure}}</td>
+          <td>{{trip.arrival}}</td>
+          <td>{{trip.agency.phone}}</td>
+          <td>{{trip.agency.email}}</td>
+          <td>{{trip.departureTime}}</td>
+          <td>{{trip.arrivalTime}}</td>
           <td>
             <!-- Button trigger modal -->
             <button class="btn">
-              <a [routerLink]="['/bus/update', bus.id]">
+              <a [routerLink]="['/bus/update', trip.id]">
                 <img src="assets/img/edit-2.png"
                      style="height: 25px;width: auto">
               </a>
             </button>
           </td>
           <td class="btn-delete">
-            <button (click)="deleteModal(bus)"
+            <button (click)="deleteModal(trip)"
                     type="button"
                     class="btn">
               <img src="assets/img/delete.png"
