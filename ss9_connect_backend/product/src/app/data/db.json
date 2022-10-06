@@ -29,6 +29,16 @@
         "name": "Giàu"
       },
       "description": "99%"
+    },
+    {
+      "id": 7,
+      "name": "headphone",
+      "price": 3000,
+      "category": {
+        "id": 2,
+        "name": "Trung"
+      },
+      "description": "sp danh cho nguoi ngheo"
     }
   ],
   "category": [

@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row" style="margin-top: 100px">
+    <div class="col-md-3">
+      <a href="#" class="btn btn-outline-success btn-light"><strong>Add new customer</strong></a>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div>
+        <div class="container-fluid">
+          <div class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search"
+                   name="searchPhoneNumber">
+            <button class="btn btn-outline-success btn-light" type="submit"><strong>Search</strong></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="tableCustomer" class="table table-hover table-striped" style="width: 100%">
+        <thead>
+        <tr class="table-dark">
+          <th scope="col">#</th>
+          <th scope="col">Số xe</th>
+          <th scope="col">Loại xe</th>
+          <th scope="col">Nhà xe</th>
+          <th scope="col">Điểm đi</th>
+          <th scope="col">Điểm đến</th>
+          <th scope="col">Số điện thoại</th>
+          <th scope="col">Email</th>
+          <th scope="col">Giờ đi</th>
+          <th scope="col">Giờ đến</th>
+          <th scope="col" style="text-align: center" colspan="2">Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bus of busList; index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{bus.busNumber}}</td>
+          <td>{{bus.busType.name}}</td>
+          <td>{{bus.name}}</td>
+          <td>{{bus.go}}</td>
+          <td>{{bus.arrival}}</td>
+          <td>{{bus.phone}}</td>
+          <td>{{bus.email}}</td>
+          <td>{{bus.hourGo}}</td>
+          <td>{{bus.hourArrival}}</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button class="btn">
+              <a [routerLink]="['/bus/update', bus.id]">
+                <img src="assets/img/edit-2.png"
+                     style="height: 25px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <button (click)="deleteModal(bus)"
+                    type="button"
+                    class="btn">
+              <img src="assets/img/delete.png"
+                   style="height: 25px;width: auto">
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

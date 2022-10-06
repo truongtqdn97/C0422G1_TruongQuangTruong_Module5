@@ -1,0 +1,29 @@
+{
+  "busList": [
+    {
+      "id": 3,
+      "busNumber": "1231",
+      "name": "Hoàng Long",
+      "go": "Huế",
+      "arrival": "Quảng Trị",
+      "phone": "0909123123",
+      "email": "hoanglong@gmail.com",
+      "hourGo": "13:20",
+      "hourArrival": "15:00",
+      "busType": {
+        "id": 2,
+        "name": "Ghế ngồi"
+      }
+    }
+  ],
+  "busType": [
+    {
+      "id": 1,
+      "name": "Giường nằm"
+    },
+    {
+      "id": 2,
+      "name": "Ghế ngồi"
+    }
+  ]
+}

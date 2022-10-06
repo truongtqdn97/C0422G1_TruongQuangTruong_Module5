@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background: rgb(34,193,195);
+  background: linear-gradient(137deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.toast-top-center {
+  top: 12px;
+  margin: 0 auto 0 -150px;
+  left: 50%;
+}

@@ -1,0 +1,108 @@
+<div class="container d-flex justify-content-md-center my-5" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12 bg-light bg-opacity-50 shadow mirror">
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
+        <legend style="text-align: center">Customer Information</legend>
+        <div>
+          <label for="name">
+            Name
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.name.hasError('required')
+                        && customerForm.controls.name.touched">
+                  Not blank!
+                </span>
+          </label>
+          <br>
+          <input formControlName="name"
+                 type="text" name="name" id="name"
+                 class="form-control">
+          <label for="birthday">
+            Birthday <span class="text-danger"
+                           *ngIf="customerForm.controls.birthday.hasError('required')
+                        && customerForm.controls.birthday.touched">
+                Not blank!
+              </span>
+          </label>
+          <input formControlName="birthday"
+                 type="date" name="birthday"
+                 id="birthday" class="form-control">
+
+          <div>
+          <label>Gender</label>
+
+          <input class="ms-5" id="male" type="radio" formControlName="gender" [value]="true">
+          <label for="male">Male</label>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input id="female" type="radio" formControlName="gender" [value]="false">
+          <label for="female">Female</label>
+          </div>
+          <div>
+            Identify Card
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.identifyCard.hasError('required')
+                        && customerForm.controls.identifyCard.touched">
+                  Not blank!
+                </span>
+          </div>
+          <div>
+            <input formControlName="identifyCard"
+                   type="text" name="idCard" class="form-control">
+          </div>
+          <div>Phone Number
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.phoneNumber.hasError('required')
+                        && customerForm.controls.phoneNumber.touched">
+                  Not blank!
+                </span>
+          </div>
+          <div>
+            <input formControlName="phoneNumber"
+                   type="text" name="phoneNumber" class="form-control">
+          </div>
+          <div>Email
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.email.hasError('required')
+                        && customerForm.controls.email.touched">
+                  Not blank!
+                </span>
+          </div>
+          <div>
+            <input formControlName="email"
+                   type="text" name="email" class="form-control">
+          </div>
+          <div>Address
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.address.hasError('required')
+                        && customerForm.controls.address.touched">
+                  Not blank!
+                </span>
+          </div>
+          <div>
+            <input formControlName="address"
+                   type="text" name="address" class="form-control">
+          </div>
+          <div>Customer Type
+            <span class="text-danger"
+                  *ngIf="customerForm.controls.customerType.hasError('required')
+                        && customerForm.controls.customerType.touched">
+                  Not blank!
+                </span>
+          </div>
+          <div>
+            <select formControlName="customerType"
+                    name="customerType" class="form-select">
+              <option value="null">Choose one</option>
+              <option *ngFor="let customerTypeObj of customerTypes" [ngValue]="customerTypeObj">
+                {{customerTypeObj.name}}
+              </option>
+            </select>
+          </div>
+          <div class="m-3">
+            <input class="btn btn-outline-danger me-5" type="reset" value="Clear">
+            <button type="submit" class="btn btn-outline-success">Create new Customer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

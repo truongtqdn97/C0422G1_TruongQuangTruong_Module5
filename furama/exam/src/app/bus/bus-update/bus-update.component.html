@@ -1,0 +1,130 @@
+<div class="container d-flex justify-content-md-center my-5" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12 bg-light info">
+      <form [formGroup]="busForm" (ngSubmit)="submit()">
+        <fieldset>
+          <legend style="text-align: center">Chỉnh sửa thông tin xe khách</legend>
+          <table>
+            <tr>
+              <td>Số xe</td>
+              <td>
+                <p formControlName="busNumber" readonly
+                       type="text" name="busNumber" id="busNumber"
+                   class="form-control">{{busObj.busNumber}}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Loại xe</td>
+              <td>
+                <select formControlName="busType"
+                        name="busType" class="form-select">
+                  <option *ngFor="let busTypeObj of busTypes" [ngValue]="busTypeObj.id">
+                    {{busTypeObj.name}}
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Nhà xe</td>
+              <td>
+                <input formControlName="name"
+                       type="text" name="name"
+                       id="name" class="form-control">
+                <p class="text-danger" *ngIf="busForm.controls.name.hasError('required')
+                      && busForm.controls.name.touched">
+                  Bắt buộc nhập
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Điểm đi</td>
+              <td>
+                <select name="" id="" formControlName="go">
+                  <option [selected]="busForm.value.go" value="{{busObj.go}}">{{busObj.go}}</option>
+                  <option value="Ho Chi Minh">HCM</option>
+                </select>
+<!--                <input formControlName="go"-->
+<!--                       type="text" name="go"-->
+<!--                       id="go" class="form-control">-->
+                <p class="text-danger" *ngIf="busForm.controls.go.hasError('required')
+                      && busForm.controls.go.touched">
+                  Bắt buộc nhập
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Điểm đến</td>
+              <td>
+                <input formControlName="arrival"
+                       type="text" name="arrival"
+                       id="arrival" class="form-control">
+                <p class="text-danger" *ngIf="busForm.controls.arrival.hasError('required')
+                      && busForm.controls.arrival.touched">
+                  Bắt buộc nhập
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Số điện thoại</td>
+              <td>
+                <input formControlName="phone"
+                       type="text" name="phone"
+                       id="phone" class="form-control">
+                <p class="text-danger" *ngIf="busForm.controls.phone.hasError('required')
+                      && busForm.controls.phone.touched">
+                  Bắt buộc nhập
+                </p>
+                <p class="text-danger" *ngIf="busForm.controls.phone.hasError('pattern')
+                      && busForm.controls.phone.touched">
+                  Không đúng định dang số điện thoại
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input formControlName="email"
+                       type="text" name="email"
+                       id="email" class="form-control">
+                <p class="text-danger" *ngIf="busForm.controls.email.hasError('required')
+                      && busForm.controls.email.touched">
+                  Bắt buộc nhập
+                </p>
+                <p class="text-danger" *ngIf="busForm.controls.email.hasError('email')
+                      && busForm.controls.email.touched">
+                  Không đúng định dang email
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Giờ đi</td>
+              <td>
+                <input formControlName="hourGo"
+                       type="text" name="hourGo"
+                       id="hourGo" class="form-control">
+                <p class="text-danger" *ngIf="busForm.controls.hourGo.hasError('required')
+                      && busForm.controls.hourGo.touched">
+                  Bắt buộc nhập
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Giờ đến</td>
+              <td>
+                <input formControlName="hourArrival"
+                       type="text" name="hourArrival"
+                       id="hourArrival" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td><a routerLink="bus" class="btn btn-outline-secondary">Quay lại</a></td>
+              <td>
+                <button type="submit" class="btn btn-outline-success">Cập nhật</button>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

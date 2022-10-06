@@ -13,11 +13,11 @@
             <td><input type="text" formControlName="name"></td>
           </tr>
           <tr>
-            <td>Giá sản phẩm</td>
+            <td>Giá sản phẩm:</td>
             <td><input type="number" formControlName="price"></td>
           </tr>
           <tr>
-            <td>Loại sản phẩm</td>
+            <td>Loại sản phẩm:</td>
             <td>
               <select formControlName="category">
                 <option *ngFor="let categoryObj of categories" [ngValue]="categoryObj">{{categoryObj.name}}</option>

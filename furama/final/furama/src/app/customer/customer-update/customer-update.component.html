@@ -1,0 +1,85 @@
+<div class="container d-flex justify-content-md-center my-5" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12 bg-light info">
+      <form [formGroup]="customerForm" (ngSubmit)="submit()">
+        <fieldset>
+          <legend style="text-align: center">Customer Information</legend>
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>
+                <input formControlName="name"
+                       type="text" name="name" id="name"
+                       class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Birthday</td>
+              <td>
+                <input formControlName="birthday"
+                       type="date" name="birthday"
+                       id="birthday" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td>
+                <input id="male" type="radio" formControlName="gender"  [value]="true">
+                <label for="male">Male</label>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input id="female" type="radio" formControlName="gender" [value]="false">
+                <label for="female">Female</label>
+              </td>
+            </tr>
+            <tr>
+              <td>Identify Card</td>
+              <td>
+                <input formControlName="identifyCard"
+                       type="text" name="idCard" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Phone Number</td>
+              <td>
+                <input formControlName="phoneNumber"
+                       type="text" name="phoneNumber" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input formControlName="email"
+                       type="text" name="email" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>
+                <input formControlName="address"
+                       type="text" name="address" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Customer Type</td>
+              <td>
+                <select formControlName="customerType"
+                        name="customerType" class="form-select">
+                  <option value="null">Choose one</option>
+                  <option *ngFor="let customerTypeObj of customerTypes" [ngValue]="customerTypeObj.id">
+                    {{customerTypeObj.name}}
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="reset" value="Clear"></td>
+              <td>
+                <button type="submit" class="btn btn-outline-success">Update Customer</button>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

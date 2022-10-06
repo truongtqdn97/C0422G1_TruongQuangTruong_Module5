@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row" style="margin-top: 100px">
+    <div class="col-md-3">
+      <a routerLink="/customers/create" class="btn btn-outline-success btn-light"><strong>Add new customer</strong></a>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div>
+        <div class="container-fluid">
+          <div class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Name..." aria-label="Search"
+                   name="searchName" #searchName>
+            <input class="form-control me-2" type="search" placeholder="Phone..." aria-label="Search"
+                   name="searchPhoneNumber" #searchPhoneNumber>
+            <button class="btn btn-outline-success btn-light" (click)="search(searchName.value, searchPhoneNumber.value)" type="submit"><strong>Search</strong></button>
+            <button class="btn btn-outline-success btn-light ms-2" (click)="reset()" type="submit"><strong>Reset</strong></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-12">
+      <table id="tableCustomer" class="table table-hover table-striped" style="width: 100%">
+        <thead>
+        <tr class="table-dark">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthday</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Identify Card</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Customer Type</th>
+          <th scope="col">Address</th>
+          <th scope="col" style="text-align: center">Edit</th>
+          <th scope="col" style="text-align: center">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let customerObj of customers | paginate: { id: 'listId',
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: totalRecord
+        }; index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{customerObj.name}}</td>
+          <td>{{customerObj.birthday}}</td>
+          <td *ngIf="!customerObj.gender"><span>Nữ</span></td>
+          <td *ngIf="customerObj.gender"><span>Nam</span></td>
+          <td>{{customerObj.identifyCard}}</td>
+          <td>{{customerObj.phoneNumber}}</td>
+          <td>{{customerObj.email}}</td>
+          <td>{{customerObj.customerType.name}}</td>
+          <td>{{customerObj.address}}</td>
+          <td>
+            <!-- Button trigger modal -->
+            <button class="btn">
+              <a [routerLink]="['/customers/update', customerObj.id]">
+                <img src="assets/img/edit-2.png"
+                     style="height: 25px;width: auto">
+              </a>
+            </button>
+          </td>
+          <td class="btn-delete">
+            <!-- Button trigger modal -->
+            <button (click)="deleteModal(customerObj)"
+              type="button"
+                    class="btn">
+<!--                    data-bs-toggle="modal"-->
+<!--                    data-bs-target="#deleteButton">-->
+              <img src="assets/img/delete.png"
+                   style="height: 25px;width: auto">
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div>
+  <pagination-controls id="listId" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div>
+
+<!--<div class="modal fade" id="deleteButton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        Do you really delete {{customer.name}} ?-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>-->
+<!--        <button (click)="delete(customer.id)" type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
